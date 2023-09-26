@@ -49,6 +49,7 @@ calcContainer{
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  width: 500px;
 
 }
 
@@ -67,7 +68,7 @@ display{
 
 }
 
-numbers{
+button{
   flex: 2;
   flex-direction: row;
   padding-top: 10px;
