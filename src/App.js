@@ -1,62 +1,82 @@
 import './App.css';
-function AlertButton({ message, children }) {
+
+function MyButton({label, onClick}) {
   return (
-    <button onClick={() => alert(message)}>
-      {children}
+    <button className="CalcButton" onClick ={onClick}>
+      {label}
     </button>
   );
 }
-function App() {
+
+function Display({display}) {
   return (
-    <section>
-      <h1>
-        Welcome to my App
-      </h1>
-    <calcContainer>
-      <displayContainer>
-        <display>
-          0
-        </display>
-      </displayContainer>
-      <row1>
-          <AlertButton message="7">7</AlertButton>
-          <AlertButton message="8">8</AlertButton>
-          <AlertButton message="9">9</AlertButton>
-          <AlertButton message="+">+</AlertButton>
-        </row1>
-
-        <row2>
-        <AlertButton message="4">4</AlertButton>
-        <AlertButton message="5">5</AlertButton>
-        <AlertButton message="6">6</AlertButton>
-        <AlertButton message="-">-</AlertButton>
-        </row2>
-
-        <row3>
-        <AlertButton message="1">1</AlertButton>
-        <AlertButton message="2">2</AlertButton>
-        <AlertButton message="3">3</AlertButton>
-        <AlertButton message="*">*</AlertButton>
-        </row3>
-
-        <row4>
-        <AlertButton message="C">C</AlertButton>
-        <AlertButton message="0">0</AlertButton>
-        <AlertButton message="=">=</AlertButton>
-        <AlertButton message="÷">÷</AlertButton>
-        </row4>
-
-    </calcContainer>
-
-    </section>
-
-
-    
-
+    <div className="CalcDisplay">
+      {display}
+    </div>    
   );
 }
 
-export default App;
+export default function App() {
+
+  const numberClickHandler = (e) => {
+    e.preventDefault();
+    const value = e.target.innerHTML;
+
+    console.log(value);
+    alert(value);
+
+  }
+
+  const operatorClickHandler = (e) => {
+    e.preventDefault();
+    const value = e.target.innerHTML;
+
+    console.log(value);
+    alert(value);
+
+  }
+
+  const equalClickHandler = (e) => {
+    e.preventDefault();
+    const value = e.target.innerHTML;
+
+    console.log(value);
+    alert(value);
+
+  }
+
+  const clearClickHandler = (e) => {
+    e.preventDefault();
+    const value = e.target.innerHTML;
+
+    console.log(value);
+    alert(value);
+
+  }
 
 
-
+  return (
+    <div className="App">
+      <h1>Welcome to my app</h1>
+      <Display display={0} />
+      <div className="ButtonContainer">
+        <MyButton label={7} onClick={numberClickHandler}/>
+        <MyButton label={8} onClick={numberClickHandler}/>
+        <MyButton label={9} onClick={numberClickHandler}/>
+        <MyButton label={"+"} onClick={operatorClickHandler}/>
+        <MyButton label={4} onClick={numberClickHandler}/>
+        <MyButton label={5} onClick={numberClickHandler}/>
+        <MyButton label={6} onClick={numberClickHandler}/>
+        <MyButton label={"-"} onClick={operatorClickHandler}/>
+        <MyButton label={1} onClick={numberClickHandler}/>
+        <MyButton label={2} onClick={numberClickHandler}/>
+        <MyButton label={3} onClick={numberClickHandler}/>
+        <MyButton label={"*"} onClick={operatorClickHandler}/>
+        <MyButton label={"C"} onClick={clearClickHandler}/>
+        <MyButton label={0} onClick={numberClickHandler}/>
+        <MyButton label={"="} onClick={equalClickHandler}/>
+        <MyButton label={"÷"} onClick={operatorClickHandler}/>
+      </div>
+    </div>
+  );
+}
