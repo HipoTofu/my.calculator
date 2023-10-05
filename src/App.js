@@ -21,6 +21,7 @@ function CalcDisplay({display}) {
 }
 
 export default function App() {
+  let total = 0;
 
   const[disp, setDisp] = useState(0);
   const[num1, setNum1] = useState(null);
@@ -57,22 +58,25 @@ export default function App() {
     e.preventDefault();
 
     if (oper === "+") {
-      total = setDisp(parseInt(num1) + parseInt(num2));
+      total = parseFloat(num1) + parseFloat(num2);
+      setDisp(parseInt(num1) + parseInt(num2));
     } 
     else if (oper === "-"){
-      total = setDisp(parseInt(num1) - parseInt(num2));
+      total = parseFloat(num1) - parseFloat(num2);
+      setDisp(parseInt(num1) - parseInt(num2));
     }
     else if (oper === "*"){
-      total = setDisp(parseInt(num1) * parseInt(num2));
+      total = parseFloat(num1) * parseFloat(num2);
+      setDisp(parseInt(num1) * parseInt(num2));
     }
     else if (oper === "÷"){
-      total = setDisp(parseInt(num1) / parseInt(num2));
+      total = parseFloat(num1) / parseFloat(num2);
+      setDisp(parseInt(num1) / parseInt(num2));
     }
     else {
       setDisp("ERROR");
     }
-  setDisp(0);
-  setNum1(total.string);
+  setNum1(total);
   setOper(null);
   setNum2(null);
   }
