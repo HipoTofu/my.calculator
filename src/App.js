@@ -71,7 +71,7 @@ export default function App() {
     else {
       setDisp("ERROR");
     }
-  setNum1(total.string)
+  setNum1(total.string);
   setOper(null);
   setNum2(null);
   }
