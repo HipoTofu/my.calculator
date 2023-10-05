@@ -57,20 +57,23 @@ export default function App() {
     e.preventDefault();
 
     if (oper === "+") {
-      setDisp(parseInt(num1) + parseInt(num2));
+      total = setDisp(parseInt(num1) + parseInt(num2));
     } 
     else if (oper === "-"){
-      setDisp(parseInt(num1) - parseInt(num2));
+      total = setDisp(parseInt(num1) - parseInt(num2));
     }
     else if (oper === "*"){
-      setDisp(parseInt(num1) * parseInt(num2));
+      total = setDisp(parseInt(num1) * parseInt(num2));
     }
     else if (oper === "÷"){
-      setDisp(parseInt(num1) / parseInt(num2));
+      total = setDisp(parseInt(num1) / parseInt(num2));
     }
     else {
       setDisp("ERROR");
     }
+  setnum1(total.string)
+  setOper(null);
+  setnum2(null);
   }
 
   const clearClickHandler = (e) => {
