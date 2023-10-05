@@ -73,7 +73,7 @@ export default function App() {
     }
   setNum1(total.string)
   setOper(null);
-  setNum2('');
+  setNum2(null);
   }
 
   const clearClickHandler = (e) => {
