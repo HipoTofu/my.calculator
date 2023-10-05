@@ -71,9 +71,9 @@ export default function App() {
     else {
       setDisp("ERROR");
     }
-  setnum1(total.string)
+  setNum1(total.string)
   setOper(null);
-  setnum2('');
+  setNum2('');
   }
 
   const clearClickHandler = (e) => {
